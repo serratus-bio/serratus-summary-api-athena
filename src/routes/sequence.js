@@ -9,6 +9,7 @@ router.get('/:id', async (req, res, next) => {
   var identityMax = req.query.identityMax
   try {
     var result = await athena.querySequence(req.params.id, scoreMin, scoreMax, identityMin, identityMax)
+    console.log(result)
     res.send(result['Items'])
   }
   catch (err) {

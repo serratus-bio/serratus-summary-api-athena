@@ -4,7 +4,7 @@ aws.config.update({region: "us-east-1"})
 
 const athenaExpressConfig = {
     aws,
-    s3: "s3://serratus-athena",
+    s3: "s3://serratus-athena/results",
     getStats: true
 }
 
