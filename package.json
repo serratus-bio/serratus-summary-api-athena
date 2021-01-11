@@ -1,13 +1,9 @@
 {
-  "name": "serratus-athena",
-  "version": "1.0.0",
-  "description": "",
+  "name": "serratus-summary-api",
+  "version": "0.1.0",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "athena-express": "^6.0.4",
     "aws-sdk": "^2.824.0",
