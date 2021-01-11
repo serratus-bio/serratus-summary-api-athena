@@ -2,16 +2,18 @@ const express = require('express')
 const router = express.Router()
 const athena = require('../services/athena')
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res, next) => {
   var scoreMin = req.query.scoreMin
   var scoreMax = req.query.scoreMax
   var identityMin = req.query.identityMin
   var identityMax = req.query.identityMax
-  var results = athena.queryFamily(req.params.id, scoreMin, scoreMax, identityMin, identityMax)
-  results.then((result) => {
-      console.log(result['Items'])
-      return res.status(200).json(result['Items']);
-  })
+  try {
+    var result = await athena.queryFamily(req.params.id, scoreMin, scoreMax, identityMin, identityMax)
+    res.send(result['Items'])
+  }
+  catch (err) {
+    next(err)
+  }
 })
 
 module.exports = router
