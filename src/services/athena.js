@@ -10,6 +10,8 @@ const athenaExpressConfig = {
 
 const athenaExpress = new AthenaExpress(athenaExpressConfig)
 
+const resultLimit = 20
+
 const queryFamily = async (id, scoreMin, scoreMax, identityMin, identityMax) => {
     // TODO: sanitize input
     let query = {
@@ -19,7 +21,8 @@ const queryFamily = async (id, scoreMin, scoreMax, identityMin, identityMax) => 
             and score > ${scoreMin}
             and score < ${scoreMax}
             and pctid > ${identityMin}
-            and pctid < ${identityMax}`,
+            and pctid < ${identityMax}
+            limit ${resultLimit}`,
         db: "summarytest",
         getStats: true 
     };
@@ -36,7 +39,8 @@ const querySequence = async (id, scoreMin, scoreMax, identityMin, identityMax) =
             and score > ${scoreMin}
             and score < ${scoreMax}
             and pctid > ${identityMin}
-            and pctid < ${identityMax}`,
+            and pctid < ${identityMax}
+            limit ${resultLimit}`,
         db: "summarytest",
         getStats: true 
     };
