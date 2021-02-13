@@ -1,13 +1,15 @@
-# serratus-summary-api
+Our use of Athena has been abandoned in favor of Aurora. New API: https://github.com/serratus-bio/serratus-summary-api
+
+# serratus-summary-api-athena
 
 ## Endpoints with examples
 
 - `/family/<family_id>`
-    - [`/family/Coronaviridae`](http://serratus-summary-api-env.us-east-1.elasticbeanstalk.com/family/Coronaviridae)
-    - [`/family/Coronaviridae?identityMin=80&identityMax=90`](http://serratus-summary-api-env.us-east-1.elasticbeanstalk.com/family/Coronaviridae?identityMin=80&identityMax=90)
+    - `/family/Coronaviridae`
+    - `/family/Coronaviridae?identityMin=80&identityMax=90`
 - `/sequence/<sequence_id>`
-    - [`/sequence/AY874537_3000883`](http://serratus-summary-api-env.us-east-1.elasticbeanstalk.com/sequence/AY874537_3000883)
-    - [`/sequence/AY874537_3000883?scoreMin=50&scoreMax=100&identityMin=50&identityMax=100`](http://serratus-summary-api-env.us-east-1.elasticbeanstalk.com/sequence/AY874537_3000883?scoreMin=50&scoreMax=100&identityMin=50&identityMax=100)
+    - `/sequence/AY874537_3000883`
+    - `/sequence/AY874537_3000883?scoreMin=50&scoreMax=100&identityMin=50&identityMax=100`
 
 ## Setup
 
